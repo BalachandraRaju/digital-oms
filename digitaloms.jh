@@ -1,0 +1,100 @@
+entity Customer {
+	name String,
+    email String,
+    phone Long required
+}
+
+entity Order {
+	channel Channel
+}
+
+enum Channel {
+	RD,
+    MJS,
+    JP,
+    JC,
+    SP,
+    RDin,
+    JMD,
+    JME,
+    B2B
+}
+
+relationship OneToMany {
+	Customer to Order{customer}
+}
+
+entity Address {
+	line1 String,
+    line2 String,
+    city String,
+    state String,
+    pincode Long,
+    lat Float,
+    lon Float,
+    country String,
+    landmart String
+}
+
+relationship OneToMany {
+	Address to Order{address}
+}
+
+relationship OneToMany {
+	Customer to Address{customer}
+}
+
+entity OrderItem {
+	article String,
+    articleType ArticleType,
+    status OrderItemStatus,
+    tatDate LocalDate,
+    tahHourOfDay Integer
+}
+
+relationship OneToMany {
+	Order to OrderItem{order}
+}
+
+enum ArticleType {
+	GnG,
+    HD
+}
+
+enum OrderItemStatus {
+	Created,
+    Delivered,
+    Cancelled,
+    FR,
+    ReturnInit,
+    ReturnPicked,
+    PGRDone
+}
+
+entity Shipment {
+	dcLocation String,
+    type ShipmentType,
+    boxSize String,	// box size enum mapping
+    delivery String, // SAP Delivery ID
+    tatDate LocalDate,
+    tahHourOfDay Integer
+}
+
+enum ShipmentType {
+	Forward,
+    Return
+}
+
+relationship ManyToMany {
+	Shipment{orderItem} to OrderItem{shipment}
+}
+
+// Set pagination options
+paginate all with infinite-scroll
+
+// Use Data Transfer Objects (DTO)
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
