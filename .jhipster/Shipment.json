@@ -1,0 +1,49 @@
+{
+  "applications": "*",
+  "changelogDate": "20221206145829",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "shipment",
+  "fields": [
+    {
+      "fieldName": "dcLocation",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "ShipmentType",
+      "fieldValues": "Forward,Return"
+    },
+    {
+      "fieldName": "boxSize",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "delivery",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tatDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "tahHourOfDay",
+      "fieldType": "Integer"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Shipment",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "orderItem",
+      "otherEntityRelationshipName": "shipment",
+      "ownerSide": true,
+      "relationshipName": "orderItem",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

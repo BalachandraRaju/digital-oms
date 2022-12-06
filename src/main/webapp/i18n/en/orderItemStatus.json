@@ -1,0 +1,14 @@
+{
+  "digitalOmsApp": {
+    "OrderItemStatus": {
+      "null": "",
+      "Created": "Created",
+      "Delivered": "Delivered",
+      "Cancelled": "Cancelled",
+      "FR": "FR",
+      "ReturnInit": "ReturnInit",
+      "ReturnPicked": "ReturnPicked",
+      "PGRDone": "PGRDone"
+    }
+  }
+}

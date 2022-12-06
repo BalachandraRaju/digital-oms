@@ -1,0 +1,16 @@
+{
+  "digitalOmsApp": {
+    "Channel": {
+      "null": "",
+      "RD": "RD",
+      "MJS": "MJS",
+      "JP": "JP",
+      "JC": "JC",
+      "SP": "SP",
+      "RDin": "RDin",
+      "JMD": "JMD",
+      "JME": "JME",
+      "B2B": "B2B"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "applications": "*",
+  "changelogDate": "20221206145828",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "order_item",
+  "fields": [
+    {
+      "fieldName": "article",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "articleType",
+      "fieldType": "ArticleType",
+      "fieldValues": "GnG,HD"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "OrderItemStatus",
+      "fieldValues": "Created,Delivered,Cancelled,FR,ReturnInit,ReturnPicked,PGRDone"
+    },
+    {
+      "fieldName": "tatDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "tahHourOfDay",
+      "fieldType": "Integer"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "OrderItem",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "order",
+      "otherEntityRelationshipName": "orderItem",
+      "relationshipName": "order",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "shipment",
+      "otherEntityRelationshipName": "orderItem",
+      "ownerSide": false,
+      "relationshipName": "shipment",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}
