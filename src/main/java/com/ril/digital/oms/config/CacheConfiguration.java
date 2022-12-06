@@ -48,6 +48,17 @@ public class CacheConfiguration {
             createCache(cm, com.ril.digital.oms.domain.User.class.getName());
             createCache(cm, com.ril.digital.oms.domain.Authority.class.getName());
             createCache(cm, com.ril.digital.oms.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.ril.digital.oms.domain.Customer.class.getName());
+            createCache(cm, com.ril.digital.oms.domain.Customer.class.getName() + ".orders");
+            createCache(cm, com.ril.digital.oms.domain.Customer.class.getName() + ".addresses");
+            createCache(cm, com.ril.digital.oms.domain.Order.class.getName());
+            createCache(cm, com.ril.digital.oms.domain.Order.class.getName() + ".orderItems");
+            createCache(cm, com.ril.digital.oms.domain.Address.class.getName());
+            createCache(cm, com.ril.digital.oms.domain.Address.class.getName() + ".orders");
+            createCache(cm, com.ril.digital.oms.domain.OrderItem.class.getName());
+            createCache(cm, com.ril.digital.oms.domain.OrderItem.class.getName() + ".shipments");
+            createCache(cm, com.ril.digital.oms.domain.Shipment.class.getName());
+            createCache(cm, com.ril.digital.oms.domain.Shipment.class.getName() + ".orderItems");
             // jhipster-needle-ehcache-add-entry
         };
     }

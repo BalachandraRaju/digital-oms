@@ -1,0 +1,9 @@
+{
+  "digitalOmsApp": {
+    "ShipmentType": {
+      "null": "",
+      "Forward": "Forward",
+      "Return": "Return"
+    }
+  }
+}
